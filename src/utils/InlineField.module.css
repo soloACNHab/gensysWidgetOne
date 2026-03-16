@@ -1,0 +1,30 @@
+.inlineField {
+    margin-bottom: 12px;
+    line-height: 100%;
+    outline: red 1px dashed; /* --- IGNORE --- */
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    font-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-right: 6px;
+}
+
+.value {
+  font-weight: normal;
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  letter-spacing: 0%;
+  color: #000;
+  gap: 100px;
+  
+}

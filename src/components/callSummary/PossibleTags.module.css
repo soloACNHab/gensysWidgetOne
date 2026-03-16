@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.select {
+  width: 100%;
+  min-width: 0;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.select:hover {
+  border-color: #000;
+}
+
+.select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}

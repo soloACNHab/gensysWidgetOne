@@ -1,0 +1,28 @@
+
+
+.call-summary-panel {
+  width: 857px;
+  display: flex;
+  flex-direction: column;
+}
+
+.summaryLayout {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.summaryMain {
+  flex: 1;
+  width: 100%;
+}
+
+.tagPanel {
+  width: 280px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  background: #fafafa;
+  padding: 12px;
+
+}

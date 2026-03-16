@@ -1,0 +1,376 @@
+.callSummaryPanel { 
+   border: 1px solid #d0d0d0;
+   border-radius: 6px;
+   background: white;
+   flex: 1;
+   padding: 16px;
+   
+   display: flex;
+   flex-direction: column;
+}
+
+.callSummarySaved {
+   background: #D9d9d9; 
+}
+
+.callSummarySaved textarea,
+.callSummarySaved input,
+.callSummarySaved select{
+   background: #D9d9d9; 
+   border-color: #D9d9d9;
+   pointer-events: none;
+}
+
+.callSummarySaved .multiSelectContainer {
+   border-color: #054940;
+}
+.callSummarySaved .option,
+.callSummarySaved .chip {
+   background: #D9d9d9; 
+   border-color: #054940;
+   color: #000;
+   pointer-events: none;
+}
+
+
+/* Main container */
+
+.widget {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Top title bar */
+
+.titleBar {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e4e7ec;
+  background: #f9fafb;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #101828;
+}
+
+/* Main form content */
+
+.content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Field groups */
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fieldRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000;
+  width: 100%;
+  outline: 1px dashed red; /* --- IGNORE --- */
+}
+
+/* Labels */
+
+.fieldLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #000;
+  font-family: Inter;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  white-space: nowrap;
+}
+
+.fieldValue {
+  align-items: flex-start;
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000;
+
+}
+
+
+.callSummaryText {
+  display: flex;
+
+}
+
+/* Inputs */
+
+.textarea {
+  display: inline-block;
+  width: 100%;
+  min-height: 64px;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 12px;
+  resize: vertical;
+  margin-bottom: 8px;
+}
+
+.textareaLarge {
+  min-height: 120px;
+  
+}
+
+.select {
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 13px;
+}
+
+/* Checkbox */
+
+.checkboxGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+}
+
+/* Word counter */
+
+.wordCount {
+  font-size: 12px;
+  color: #667085;
+}
+
+.wordCountWarning {
+  color: #f04438;
+}
+
+/* Error */
+
+.fieldError {
+  border-color: #f04438;
+}
+
+.errorMessage {
+  font-size: 12px;
+  color: #f04438;
+}
+
+/* Save buttons */
+
+.saveSection {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border-top: 1px solid #e4e7ec;
+}
+
+.btnPrimary {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btnSecondary {
+  background: #f2f4f7;
+  color: #344054;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+
+/* Transcription section */
+
+.transcriptionSection {
+  padding: 16px;
+  border-top: 1px solid #e4e7ec;
+}
+
+.transcriptionTitle {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* Bottom section */
+.bottomSection {
+  display: flex;
+  justify-content: space-between;
+  background: #CDDEEE;
+  padding: 16px;
+  
+}
+
+.bottomSection > div:first-child {
+  flex: 2;
+}
+
+.bottomSection > div:last-child {
+  flex: 1;
+}
+
+
+/* Save Button section */
+.saveButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.saveButton {
+  background: #E3E3E3;;
+  color: #626262;
+  border: 1px solid #626262;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 13px;
+  cursor: pointer;
+
+  font-family: Inter;
+ font-weight: 700;
+font-style: Bold;
+font-size: 12px;
+line-height: 100%;
+letter-spacing: 0%;
+
+}
+
+.saveButton:hover {
+  background-color: #e6e6e6;
+}
+
+.saveSuccess {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #054940;
+  font-size: 12px;  
+  font-weight: 600;
+  margin-left: 12px;
+
+  font-family: Inter;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 12px;
+  line-height: 100%;
+
+}
+
+.checkIcon {
+  width: 12px;
+  height: 12px;
+}
+
+
+/* Program multi-select */
+.multiSelectContainer {
+  position: relative;
+  flex: 1;
+}
+
+.multiSelectInput {
+  position: relative;
+  min-height: 23px;
+  padding: 4px 6px;
+  display: inline-flex;
+  min-width: 140px;
+  align-items: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+  background: white;
+  border: 1px solid #000000A6
+}
+
+.chips {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
+  
+}
+
+.chip {
+  background: #003F7D;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.dropdownArrow {
+  margin-left: auto;
+  font-size: 10px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  width: 100%;  
+  min-width: 100%;
+
+  background: white;
+  border: 1px solid #cfcfcf;
+
+  max-height: 180px;
+  overflow-y: auto;
+
+  z-index: 50;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
+.option:hover {
+  background: #E4F4FC;
+}
+
+.optionSelected {
+  background: #E4F4FC;
+}

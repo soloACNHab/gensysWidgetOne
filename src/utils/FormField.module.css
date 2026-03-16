@@ -1,0 +1,46 @@
+.fieldRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000;
+  width: 100%;
+  outline: 1px dashed red; /* --- IGNORE --- */
+}
+
+/* Labels */
+
+.fieldLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #000;
+  font-family: Inter;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  white-space: nowrap;
+}
+
+.fieldValue {
+  align-items: flex-start;
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000;
+
+}
+
+.fielControl {
+  width: 100%;
+}
