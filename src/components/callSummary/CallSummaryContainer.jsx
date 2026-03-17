@@ -1,17 +1,14 @@
-import { useState } from "react";
 import InterviewSummary from "./InterviewSummary";
 import NonInterviewSummary from "./NonInterviewSummary";
-import LiveTranscriptionPanel from "../transcription/LiveTranscriptionPanel";
+import TranscriptionSection from "../transcription/TranscriptionSection";
 import styles from "./CallSummary.module.css";
-
 export default function CallSummaryContainer({
+  callState,
+  onCallStateChange,
   templateType,
   selectedTags,
   onRemoveTag,
 }) {
-  const [callState, setCallState] = useState("live");
-  const [isTranscriptionOpen, setIsTranscriptionOpen] = useState(false);
-
   const renderSummary = () => {
     if (templateType === "interview") {
       return (
@@ -28,28 +25,12 @@ export default function CallSummaryContainer({
       />
     );
   };
-
-  
-
   return (
     <div className={styles.callSummaryPanel}>
-
-      
-
-      <button
-       onClick={() => setCallState("ended")}>
-        End Call
-       </button>
-
-      {/*show summary only after call ends*/}
+      {" "}
+      <button onClick={() => onCallStateChange("ended")}> End Call </button>
       {callState === "ended" && renderSummary()}
-
-      {/*Transcription always visible*/}
-      <LiveTranscriptionPanel 
-      callState={callState}
-      isOpen={isTranscriptionOpen}
-      toggleOpen={() => setIsTranscriptionOpen(prev => !prev)} 
-      />
+      <TranscriptionSection callState={callState} />{" "}
     </div>
   );
 }

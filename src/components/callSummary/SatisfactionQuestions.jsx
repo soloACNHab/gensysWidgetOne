@@ -2,30 +2,24 @@ import { useState } from "react";
 import styles from "./SatisfactionQuestions.module.css";
 import SatisfactionQuestion from "./SatisfactionQuestion";
 
-
 import faceFrown from "../../assets/face-frown.png";
 import faceFromOutline from "../../assets/face-frown-outline.png";
 import handThumbUp from "../../assets/hand-thumb-up.png";
 import handThumbDown from "../../assets/hand-thumb-down.png";
 
-export default function SatisfactionQuestions({onChange, errors}) {
+export default function SatisfactionQuestions({ onChange, errors }) {
   const [answers, setAnswers] = useState({
     q1: null,
     q2: null,
   });
 
   const handleChange = (question, value) => {
-    
-    setAnswers((prev) => {
-        const updated = {
-            ...prev,
-            [question]: value
-        };
-        if (onChange) {
-            onChange(updated);
-        }
-        return updated;
-    });
+    const updated = { ...answers, [question]: value };
+    setAnswers(updated);
+
+    if (onChange) {
+      setTimeout(() => onChange(updated), 0);
+    }
   };
 
   return (

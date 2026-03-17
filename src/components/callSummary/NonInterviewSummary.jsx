@@ -4,44 +4,45 @@ import SummaryForm from "./SummaryForm";
 import WrapUpSuggestions from "./WrapUpSuggestions";
 import SatisfactionQuestions from "./SatisfactionQuestions";
 import styles from "./CallSummary.module.css";
-
-import { MOCK_INTERVIEW, PROGRAMS } from "../../config/callSummaryConfig.js";
-
-export default function InterviewSummary({ selectedTags, onRemoveTag }) {
+import {
+  MOCK_NON_INTERVIEW,
+  PROGRAMS,
+} from "../../config/callSummaryConfig.js";
+export default function NonInterviewSummary({ selectedTags, onRemoveTag }) {
   const methods = useForm();
-  const displayData = MOCK_INTERVIEW; // In a real app, this would come from props or API
-
-   const [satisfactionAnswers, setSatisfactionAnswers] = useState({
-      q1: null,
-      q2: null,
-    });
-  
-    const [errors, setErrors] = useState({});
+  const displayData = MOCK_NON_INTERVIEW;
+  const [satisfactionAnswers, setSatisfactionAnswers] = useState({
+    q1: null,
+    q2: null,
+  });
+  const [errors, setErrors] = useState({});
   return (
     <FormProvider {...methods}>
+      {" "}
       <div>
-        <h2>Interview Summary</h2>
-
+        {" "}
+        <h2>Non-Interview Summary</h2>
         <SummaryForm
-          templateType="noninterview"
+          templateType="nonInterview"
           displayData={displayData}
           programs={PROGRAMS}
           selectedTags={selectedTags}
           satisfactionAnswers={satisfactionAnswers}
           errors={errors}
           setErrors={setErrors}
-        />
+        />{" "}
         <div className={styles.bottomSection}>
+          {" "}
           <WrapUpSuggestions
             selectedTags={selectedTags}
             onRemoveTag={onRemoveTag}
           />
-
-          <SatisfactionQuestions 
-           onChange={setSatisfactionAnswers}
-          errors={errors} />
-        </div>
-      </div>
+          <SatisfactionQuestions
+            onChange={setSatisfactionAnswers}
+            errors={errors}
+          />{" "}
+        </div>{" "}
+      </div>{" "}
     </FormProvider>
   );
 }

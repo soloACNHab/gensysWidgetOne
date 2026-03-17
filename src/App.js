@@ -1,26 +1,12 @@
 import React, { useState, useCallback } from "react";
-
 import CallSummaryHeader from "./components/transcription/CallSummaryHeader";
-import LiveTranscriptionPanel from "./components/transcription/LiveTranscriptionPanel";
 import CallSummaryContainer from "./components/callSummary/CallSummaryContainer";
 import PossibleTags from "./components/callSummary/PossibleTags";
-
-import headphoneIcon from "./assets/headphone.png";
-import callSummaryIcon from "./assets/callSummary.png";
-import callerIcon from "./assets/caller-user.png";
+import WrapUpCodesSidebar from "./components/callSummary/WrapUpCodesSidebar";
 import "./App.css";
-
 function App() {
-  const [messages] = useState([]);
-  const [view, setView] = useState("live");
-
-  /*
-  == Possible tags 
-  const selectedTags = ["Eligibility", "Verification"];
- 
-  const handleRemoveTag = (tag) => {
-    console.log("remove tag", tag);
-  };*/
+  const [callState, setCallState] = useState("live");
+  const [templateType, setTemplateType] = useState("nonInterview");
   const [selectedTags, setSelectedTags] = useState([]);
   const handleAddTag = useCallback((tag) => {
     setSelectedTags((prev) => (prev.includes(tag) ? prev : [...prev, tag]));
@@ -28,83 +14,76 @@ function App() {
   const handleRemoveTag = useCallback((tag) => {
     setSelectedTags((prev) => prev.filter((t) => t !== tag));
   }, []);
-
   return (
-    <div >
-      
-
-      {/* Icon Switch */}
-      <div style={{ display: "flex", gap: "12px", padding: "12px" }}>
-        <img
-          src={headphoneIcon}
-          alt="Live Transcription"
-          style={{ width: "28px", cursor: "pointer" }}
-          onClick={() => setView("live")}
-        />
-
-        <img
-          src={callSummaryIcon}
-          alt="Non Interview Summary"
-          style={{ width: "28px", cursor: "pointer" }}
-          onClick={() => setView("nonInterview")}
-        />
-
-        <img
-          src={callerIcon}
-          alt="Interview Summary"
-          style={{ width: "28px", cursor: "pointer" }}
-          onClick={() => setView("interview")}
-        />
-      </div>
-
-      {/* Header */}
+    <div>
+      {" "}
       <CallSummaryHeader />
-
-      {/* View Switching */}
-
-      {view === "live" && (
-        <div>
-          <LiveTranscriptionPanel messages={messages} />
-        </div>
-      )}
-
-      {view === "nonInterview" && (
-        <div>
+      {/* Dev toggle: switch template type for development */}{" "}
+      <div
+        style={{
+          padding: "8px 12px",
+          fontSize: "12px",
+          display: "flex",
+          gap: "8px",
+          alignItems: "center",
+        }}
+      >
+        {" "}
+        <span>Template:</span>{" "}
+        <button
+          type="button"
+          onClick={() => setTemplateType("nonInterview")}
+          style={{
+            padding: "4px 12px",
+            background: templateType === "nonInterview" ? "#1976d2" : "#eee",
+            color: templateType === "nonInterview" ? "#fff" : "#333",
+            border: "1px solid #ccc",
+            borderRadius: "4px",
+            cursor: "pointer",
+          }}
+        >
+          {" "}
+          Non-Interview{" "}
+        </button>{" "}
+        <button
+          type="button"
+          onClick={() => setTemplateType("interview")}
+          style={{
+            padding: "4px 12px",
+            background: templateType === "interview" ? "#1976d2" : "#eee",
+            color: templateType === "interview" ? "#fff" : "#333",
+            border: "1px solid #ccc",
+            borderRadius: "4px",
+            cursor: "pointer",
+          }}
+        >
+          {" "}
+          Interview{" "}
+        </button>{" "}
+      </div>
+      <div className="summaryLayout">
+        {" "}
+        <div className="summaryMain">
+          {" "}
           <CallSummaryContainer
-            templateType="nonInterview"
+            callState={callState}
+            onCallStateChange={setCallState}
+            templateType={templateType}
             selectedTags={selectedTags}
             onRemoveTag={handleRemoveTag}
-          />
-          <aside style={{ padding: "12px", fontSize: "12px", color: "#666" }}>
-            <PossibleTags
-              selectedTags={selectedTags}
-              onAddTag={handleAddTag}
-            />{" "}
-          </aside>
+          />{" "}
         </div>
-      )}
-
-      {view === "interview" && (
-        <div className="summaryLayout">
-          <div className="summaryMain">
-            <CallSummaryContainer
-              templateType="interview"
-              selectedTags={selectedTags}
-              onRemoveTag={handleRemoveTag}
-            />
-          </div>
-
-          <aside className="tagPanel">
-            <h4>Possible Tags</h4>
-            <PossibleTags
-              selectedTags={selectedTags}
-              onAddTag={handleAddTag}
-            />{" "}
-          </aside>
-        </div>
-      )}
+        <aside
+          className="tagPanel"
+          aria-label="Wrap-up codes and possible tags"
+        >
+          {" "}
+          <h4>Possible Tags</h4>{" "}
+          <PossibleTags selectedTags={selectedTags} onAddTag={handleAddTag} />{" "}
+          <WrapUpCodesSidebar />{" "}
+        </aside>{" "}
+      </div>{" "}
     </div>
   );
 }
-
 export default App;

@@ -374,3 +374,43 @@ letter-spacing: 0%;
 .optionSelected {
   background: #E4F4FC;
 }
+
+
+
+/* Additional Action - symmetric textarea in fieldRow */
+.textareaInRow {
+ flex: 1;
+ min-width: 0;
+ min-height: 80px;
+ padding: 8px 10px;
+ font-family: Inter, sans-serif;
+ font-size: 12px;
+ font-weight: 400;
+ line-height: 1.5;
+ border: 1px solid #cfcfcf;
+ border-radius: 6px;
+ resize: vertical;
+}
+
+/* Additional Action - InlineField look when saved */
+.additionalActionInline {
+ margin-bottom: 12px;
+ line-height: 1.5;
+}
+
+.additionalActionInlineLabel {
+ font-size: 12px;
+ font-weight: 700;
+ color: #000;
+ font-family: Inter, sans-serif;
+ margin-right: 6px;
+}
+
+.additionalActionInlineValue {
+ font-weight: 400;
+ font-family: Inter, sans-serif;
+ font-size: 12px;
+ color: #000;
+ white-space: pre-wrap;
+ word-break: break-word;
+}
