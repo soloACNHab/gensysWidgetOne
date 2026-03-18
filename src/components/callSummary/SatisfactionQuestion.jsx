@@ -1,4 +1,4 @@
-import styles from "./SatisfactionQuestions.module.css";
+import styles from "../../styling/callSummary/SatisfactionQuestions.module.css";
 import subtractIcon from "../../assets/subtract.png";
 import FormError from "../../utils/FormError";
 

@@ -1,7 +1,7 @@
 import { useFormContext } from "react-hook-form";
 import useSaveSummary from "../../hooks/useSaveSummary";
 import checkCircle from "../../assets/check-circle.png";
-import styles from "./CallSummary.module.css";
+import styles from "../../styling/callSummary/CallSummary.module.css";
 import RenderReadOnlyField from "../../utils/renderReadOnlyField";
 import { PROGRAM_OPTIONS } from "../../config/programOptions";
 import ProgramMultiSelect from "./ProgramMultiSelect";

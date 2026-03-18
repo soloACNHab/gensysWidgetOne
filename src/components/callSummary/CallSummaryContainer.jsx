@@ -1,7 +1,7 @@
 import InterviewSummary from "./InterviewSummary";
 import NonInterviewSummary from "./NonInterviewSummary";
 import TranscriptionSection from "../transcription/TranscriptionSection";
-import styles from "./CallSummary.module.css";
+import styles from "../../styling/callSummary/CallSummary.module.css";
 export default function CallSummaryContainer({
   callState,
   onCallStateChange,

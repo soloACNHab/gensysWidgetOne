@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./SatisfactionQuestions.module.css";
+import styles from "../../styling/callSummary/SatisfactionQuestions.module.css";
 import SatisfactionQuestion from "./SatisfactionQuestion";
 
 import faceFrown from "../../assets/face-frown.png";

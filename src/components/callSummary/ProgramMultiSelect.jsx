@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./CallSummary.module.css";
+import styles from "../../styling/callSummary/CallSummary.module.css";
 import { PROGRAM_OPTIONS } from "../../config/programOptions.js";
 
 const ProgramMultiSelect = ({ value = [], onChange }) => {

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { WRAPUP_SUGGESTIONS } from "../../config/wrapupSuggestionsConfig";
-import styles from "./WrapUpCodesSidebar.module.css";
+import styles from "../../styling/callSummary/WrapUpCodesSidebar.module.css";
+
 export default function WrapUpCodesSidebar() {
   const [search, setSearch] = useState("");
   const filtered = WRAPUP_SUGGESTIONS.filter((item) =>

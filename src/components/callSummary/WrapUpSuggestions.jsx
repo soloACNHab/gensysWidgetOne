@@ -1,5 +1,5 @@
 
-import styles from "./WrapUpSuggestions.module.css";
+import styles from "../../styling/callSummary/WrapUpSuggestions.module.css";
 import lightBulb from "../../assets/light-bulb.png";
 import tagCopyIcon from "../../assets/tag-copy.png";
 export default function WrapUpSuggestions({ selectedTags, onRemoveTag }) {

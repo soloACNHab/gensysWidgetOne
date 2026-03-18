@@ -3,7 +3,7 @@ import { useForm, FormProvider } from "react-hook-form";
 import SummaryForm from "./SummaryForm";
 import WrapUpSuggestions from "./WrapUpSuggestions";
 import SatisfactionQuestions from "./SatisfactionQuestions";
-import styles from "./CallSummary.module.css";
+import styles from "../../styling/callSummary/CallSummary.module.css";
 
 import { MOCK_INTERVIEW, PROGRAMS } from "../../config/callSummaryConfig.js";
 

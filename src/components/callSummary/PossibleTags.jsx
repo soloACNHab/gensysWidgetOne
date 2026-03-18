@@ -1,6 +1,6 @@
 
 import { WRAPUP_SUGGESTIONS } from "../../config/wrapupSuggestionsConfig";
-import styles from "./PossibleTags.module.css";
+import styles from "../../styling/callSummary/PossibleTags.module.css";
 
 /**
  * PossibleTags - A dropdown to select tags. Selected values are displayed as tags

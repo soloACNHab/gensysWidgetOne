@@ -1,6 +1,6 @@
 import React from "react";
 import callSummaryIcon from "../../assets/callSummary.png";
-import "./transcription.css";
+import  "../../styling/transcription/transcription.css";
 
 function CallSummaryHeader() {
     return (

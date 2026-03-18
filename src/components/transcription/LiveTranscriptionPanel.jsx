@@ -4,7 +4,7 @@ import chevronDoubleUp from "../../assets/chevron-double-up.png";
 import useMessages from "../../hooks/useMessages";
 import { transcriptStream } from "../../config/transcriptConfig.js";
 import MessageItem from "./MessageItem";
-import "./transcription.css";
+import  "../../styling/transcription/transcription.css";
 
 export default function LiveTranscriptionPanel({ callState }) {
   const messages = useMessages(transcriptStream, callState);

@@ -1,4 +1,5 @@
-import styles from "./FormField.module.css";
+
+import styles from "../styling/utils/FormField.module.css";
 
 const FormField = ({ label, htmlFor, children }) => {
     return (

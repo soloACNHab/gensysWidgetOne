@@ -1,12 +1,17 @@
 import { useState } from "react";
 import useAutoScroll from "../../hooks/useAutoScroll.js";
 import useMessages from "../../hooks/useMessages";
-import { transcriptStream } from "../../config/transcriptConfig.js";
+//import { transcriptStream } from "../../config/transcriptConfig.js";
+import { getTranscriptStreamSync } from "../../services/transcriptSource.js";
 import MessageItem from "./MessageItem";
 import chevronDoubleUp from "../../assets/chevron-double-up.png";
-import "./transcription.css";
+import  "../../styling/transcription/transcription.css";
+
 export default function TranscriptionSection({ callState }) {
+  
+  const transcriptStream = getTranscriptStreamSync();
   const messages = useMessages(transcriptStream, callState);
+
   const [collapsed, setCollapsed] = useState(false);
   const scrollRef = useAutoScroll(messages);
   const isLive = callState === "live";

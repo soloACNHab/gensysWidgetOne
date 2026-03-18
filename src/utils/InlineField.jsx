@@ -1,4 +1,5 @@
-import styles from "./InlineField.module.css";
+
+import styles from "../styling/utils/InlineField.module.css";
 export default function InlineField({ label, value }) {
     if (!value) return null;
 
